@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>army form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="head">
+            ARMY FORM
+        </div>
+        <div class="form">
+
+            <form action="#" onsubmit="sub()">
+                <label for="">
+                    NATIONALITY:
+                    <input type="text" id="national">
+                </label>
+                <br>
+                <label for="">
+                    HEIGHT:
+                    <input type="number" id="height">
+                </label>
+                <br>
+                <label for="">
+                    AGE:
+                    <input type="number" id="age">
+
+                </label>
+                <br>
+                <label for="">
+                    Education :
+                    <select id="education">
+                        <option value="matric">Matric</option>
+                        <option value="inter">Inter</option>
+                        <option value="bachelor">Bachelor</option>
+                        <option value="master">Master</option>
+                    </select>
+
+                </label>
+                <br>
+                <button>SUBMIT</button>
+                <br>
+            </form>
+            <h1 id="result"></h1>
+        </div>
+    </div>
+    <script>
+        function sub() {
+            var nationality = document.getElementById("national").value;
+            var heght = document.getElementById("height").value;
+            var age = document.getElementById("age").value;
+            var education = document.getElementById("education").value;
+            var result = document.getElementById("result");
+            if (nationality == "pakistan" && heght >= 5.5 &&
+                (age >= 18 && age <= 22)
+                || (age >= 18 && age <= 28 && education == "master")
+            ) {
+                result.innerHTML = "congrats :) you are elegible"
+            }
+            else {
+                result.innerHTML = "sorry! You are not elegible "
+
+            }
+
+            // if(nationality == "pakistan" && heght >= 5.5){
+            //     if((age >= 18 && age <= 22 ) 
+            //     || (age >= 18 && age <= 28 && education == "master")){
+            // console.log("yes u welcome")
+            //     }
+            // else{
+            //     "no u r not"
+            // }
+            // }
+        }
+</script>
+
+</body>
+
+</html>
